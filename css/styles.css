@@ -1,0 +1,286 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* 添加垂直滚动条 */
+}
+
+header {
+    background-color: white; /* 白色背景 */
+    color: black; /* 黑色文字 */
+    padding: 0.25em 0; /* 将内边距减半 */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.logo img {
+    height: 78px; /* Logo高度减半 */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1em;
+    position: relative;
+}
+
+nav ul li a {
+    color: black; /* 黑色文字 */
+    text-decoration: none;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    white-space: nowrap; /* 确保下拉菜单项在一行中显示 */
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 100px); /* 高度为视口高度减去导航栏和页脚的高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    color: white; /* 白色字体 */
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* 添加黑色阴影 */
+}
+
+#home {
+   /* background-image: url('assets\elitebg.webp'); 主页背景图片 */
+    background-image: url('elitebg.webp')
+}
+
+#services {
+    background-image: url('services.webp'); /* 服务页面背景图片 */
+}
+
+#contact {
+    background-image: url('elitecontact.webp'); /* 联系页面背景图片 */
+}
+
+.overlay {
+    padding: 2em;
+    text-align: center;
+    color: white;
+}
+
+.text-content {
+    padding: 2em;
+    text-align: center;
+    color: white; /* 黄色字体 */
+}
+
+.services-content {
+    color: white; /* 黄色字体 */
+}
+
+.container {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    padding-top: 40px; /* 确保内容不会被导航栏遮挡 */
+}
+
+.center-align {
+    text-align: center; /* 确保描述内容居中显示 */
+}
+
+/* .left-align {
+    text-align: left; /* 确保描述内容左对齐 */
+    margin-bottom: 5px; /* 调整段落的底部边距 */
+} */
+
+.justify-align {
+    text-align: justify; /* 设置两端对齐 */
+    margin-bottom: 5px; /* 调整段落的底部边距 */
+}
+
+h2 {
+    margin-top: 5px; /* 调整标题的顶部边距 */
+}
+
+.full-width {
+    width: 100%; /* 确保图片适应整个屏幕宽度 */
+}
+
+.half-height {
+    height: 50vh; /* 图片高度设为现有高度的一半 */
+}
+
+.services-list {
+    list-style: none; /* 移除默认列表样式 */
+    padding: 0;
+}
+
+.services-list li {
+    margin-bottom: 1em;
+}
+
+.services-list li a {
+    color: white; /* 链接显示为红色 */
+    text-decoration: none;
+}
+
+#residential-intro,
+#commercial-intro,
+#real-estate-development-intro,
+#land-development-intro,
+#construction-service-intro {
+    padding-top: 1em; /* 添加顶部填充以避免被导航栏遮挡 */
+}
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0.1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+footer.hidden {
+    transform: translateY(100%); /* 隐藏footer，将其移出屏幕 */
+}
+
+/* 设置博客列表的布局和滚动条 */
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-row img {
+    flex: 0.5;
+    max-width: 22%;
+    margin: 0.5%;
+    height: auto;
+}
+
+.project-item {
+    margin: 2em 0;
+}
+
+.blog-item {
+    flex: 1 1 22%;
+    margin: 1em;
+    max-width: 22%;
+    text-align: center;
+}
+
+.blog-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
+.blog-item p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: white; /* 白色背景 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 1em;
+        display: block;
+        border-top: 1px solid #ddd;
+    }
+
+    nav ul li .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    nav ul li:hover .dropdown-content {
+        display: none;
+    }
+
+    .gallery-row {
+        flex-direction: column;
+    }
+
+    .blog-item {
+        max-width: 100%;
+        margin: 1em 0;
+    }
+}
+
+/* 设置联系方式样式 */
+.contact-info {
+    padding: 10px 20px;
+    border-radius: 5px; /* 可选，圆角效果 */
+    text-align: center; /* 确保文本居中 */
+    font-size: 18px;
+    color: white; /* 字体颜色 */
+}
+
+.contact-info p {
+    margin: 0; /* 移除默认的段落边距 */
+}
+
